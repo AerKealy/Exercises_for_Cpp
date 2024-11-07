@@ -17,5 +17,5 @@ int main(){
 
     }
 
-    return main();
+    return 0;
 }
