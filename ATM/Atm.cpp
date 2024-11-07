@@ -8,17 +8,18 @@ double withdraw(double balance2, bool account);
 void ShowBalance(double balance2, bool account);
 
     std::string username;
-    int passwordoriginal, password, choice;
+    int passwordoriginal, password ;
+    int choice = 4;
     double balance1 = 0;
     double balance2 = 0;
 
 int main(){
     
-    std::cout << "**************************\n";
-    std::cout << "Enter Username = ";
-    std::cin >> username;
+std::cout << "\n**************************\n";
+std::cout << "Enter Username = ";
+std::cin >> username;
 
-    do{
+        do{
         if (username == "Ali"){
             passwordoriginal = 123456;
             std::cout << "Please enter your password = ";
@@ -65,12 +66,13 @@ int main(){
                         }  
                 break; 
             
-            }
-    }
+             }
+            };
     
+        }while(choice != 4);
 
-    
-        else if (username == "Riza"){
+    do{
+        if (username == "Riza"){
             passwordoriginal = 654321;
             std::cout << "Please enter your password = ";
             std::cin >> password;
@@ -115,14 +117,14 @@ int main(){
                             std::cout << "Invalid Choice";
                         }  
                 break; 
-            
+        
             }
     }
+}while(choice != 4);
 
-    else(std::cout << "You are not registered");
-    
-    }while(choice != 4);
-    return 0;
+std::cout << "You are not registered";
+return main();;
+
 }
 
 
