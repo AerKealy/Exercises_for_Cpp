@@ -1,7 +1,7 @@
 #include <iostream>
 
-int RightTriangle();
-int LeftTriangle();
+
+int Triangle();
 
 int lenght;
 int space;
@@ -10,12 +10,12 @@ int main(){
 
     std::cout << "Please enter your Triangle's Lenght: ";
     std::cin >> lenght;
-    LeftTriangle();
+    Triangle();
     
     return 0;
 }
 
-int LeftTriangle(){
+int Triangle(){
     
     for(int i=0; i<=lenght; i++){
 
@@ -27,23 +27,13 @@ int LeftTriangle(){
         for(int j=0; j<=i; j++){
             std::cout << "*";
         }
+        
         for(int g=0; g<=i; g++){
         std::cout << "*";
         }
 
         std::cout << "\n"; 
   
-    }
-return 0;
-}
-
-
-int RightTriangle(){
-
-    for(int l=0; l <= lenght; l++){
-        
-
-        std::cout << "\n";  
     }
 return 0;
 }
