@@ -1,43 +1,50 @@
 #include <iostream>
 
-char PlayerPick();
+char PlayerPick(char choice);
 char ComputerPick();
 void ShowPick(char pick);
-void Winner(char player);
+void Winner(char player1, char player2);
 
-char player, computer; 
+char player1, player2, computer; 
 int Rnum;
 
 int main(){
     
     std::cout << "Welcome to Rock-Paper-Scissor\n";
-    std::cout << "*********************************";
-    player = PlayerPick();
+    std::cout << "*********************************\n";
+    std::cout << "Player 1: ";
+    player1 = PlayerPick(player1);
+
+    std::cout << "Player 2: ";
+    player2 = PlayerPick(player2);
     computer = ComputerPick();
 
-    std::cout << "You Picked: ";
-    ShowPick(player);
+    std::cout << "Player1 Picked: ";
+    ShowPick(player1);
+
+    std::cout << "Player2 Picked: ";
+    ShowPick(player2);
 
     std::cout << "Computer Picked: ";
     ShowPick(computer);
 
-    Winner(player);
+    Winner(player1, player2);
     std::cout << "*********************************\n";
     system("pause");
     return main();
 }
 
-char PlayerPick(){
+char PlayerPick(char choice){
     do{
     std::cout << "Enter one of the options\n";
     std::cout << "'r' for Rock\n";
     std::cout << "'s' for Scissor\n";
     std::cout << "'p' for Paper\n" << ": ";
-    std::cin >> player;
-    }while(player != 'r' && player != 's' && player != 'p');
+    std::cin >> choice;
+    }while(choice != 'r' && choice != 's' && choice != 'p');
     
 
-    return player;
+    return choice;
 }
 
 char ComputerPick(){
@@ -64,21 +71,43 @@ void ShowPick(char pick){
 
 }
 
-void Winner(char player){
-    switch(player){
-        case 'r':   if(computer == 'r'){std::cout << "It's a TIE\n";} 
-                    else if (computer == 'p'){std::cout << "You LOST\n";}
-                    else{std::cout << "You WON\n";}
+void Winner(char player1, char player2){
+    switch(player1){
+        case 'r':   if(computer == 'r' && player2 == 'r'){std::cout << "It's a TIE\n";}
+                    else if (computer == 'r' && player2 == 'p'){std::cout << "Player2 WON\n";}
+                    else if (computer == 'r' && player2 == 's'){std::cout << "Computer and Player1 WON \n";} 
+                    else if (computer == 'p' && player2 == 'r'){std::cout << "Computer WON\n";}
+                    else if (computer == 's' && player2 == 'r'){std::cout << "Player1 and Player2 WON\n";}
+                    else if (computer == 'p' && player2 == 's'){std::cout << "Everyone Lose and Won\n";}
+                    else if (computer == 's' && player2 == 'p'){std::cout << "Everyone Lose and Won\n";} 
+                    else if (computer == 's' && player2 == 's'){std::cout << "You WON\n";}
+                    else if (computer == 'p' && player2 == 'p'){std::cout << "Computer and Player2 WON\n";}
+                    else{std::cout << "How did we get here";}  
+                    
         break;
 
-        case 'p':   if(computer == 'r'){std::cout << "You WON\n";} 
-                    else if (computer == 'p'){std::cout << "It's a TIE\n";}
-                    else{std::cout << "You LOST\n";}
+        case 'p':   if(computer == 'r' && player2 == 'r'){std::cout << "You WON\n";} 
+                    else if (computer == 'r' && player2 == 'p'){std::cout << "Player1 and Player2 WON\n";} 
+                    else if (computer == 'r' && player2 == 's'){std::cout << "Everyone Lose and Won\n";} 
+                    else if (computer == 'p' && player2 == 'r'){std::cout << "Computer and Player1 WON\n";} 
+                    else if (computer == 's' && player2 == 'r'){std::cout << "Everyone Lose and Won\n";} 
+                    else if (computer == 'p' && player2 == 's'){std::cout << "Player2 WON\n";} 
+                    else if (computer == 's' && player2 == 'p'){std::cout << "Computer WON\n";} 
+                    else if (computer == 's' && player2 == 's'){std::cout << "Computer and Player2 WON\n";}
+                    else if (computer == 'p' && player2 == 'p'){std::cout << "It's a TIE\n";} 
+                    else{std::cout << "How did we get here";} 
         break;
 
-        case 's':   if(computer == 'r'){std::cout << "You LOST\n";} 
-                    else if (computer == 'p'){std::cout << "You WON\n";}
-                    else{std::cout << "It's a TIE\n";}
+        case 's':   if(computer == 'r' && player2 == 'r'){std::cout << "Computer and Player2 WON\n";}
+                    else if (computer == 'r' && player2 == 'p'){std::cout << "Everyone Lose and Won\n";}
+                    else if (computer == 'r' && player2 == 's'){std::cout << "Computer WON \n";} 
+                    else if (computer == 'p' && player2 == 'r'){std::cout << "Everyone Lose and Won\n";}
+                    else if (computer == 's' && player2 == 'r'){std::cout << "Player2 WON\n";}
+                    else if (computer == 'p' && player2 == 's'){std::cout << "Player1 and Player2 WON\n";}
+                    else if (computer == 's' && player2 == 'p'){std::cout << "Computer and Player1 WON\n";} 
+                    else if (computer == 's' && player2 == 's'){std::cout << "It's a TIE\n";}
+                    else if (computer == 'p' && player2 == 'p'){std::cout << "You WON\n";}
+                    else{std::cout << "How did we get here";} 
         break;
     }
 }
