@@ -10,7 +10,7 @@ int Rnum;
 
 int main(){
     
-    std::cout << "Wlecome to Rock-Paper-Scissor\n";
+    std::cout << "Welcome to Rock-Paper-Scissor\n";
     std::cout << "*********************************";
     player = PlayerPick();
     computer = ComputerPick();
