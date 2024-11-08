@@ -1,4 +1,5 @@
-<h1>Simple Output That looks Like Triangle</h1>
+<h1>Simple Output That looks Like Triangle </h1>
+<h2>With lenght of the input</h2>
 <h2>Lv1</h2>
 
 <pre>
