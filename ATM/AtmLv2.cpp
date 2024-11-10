@@ -36,7 +36,7 @@ std::cin >> username;
                 case 1:
                     std::cout << "Please enter a choice\n";
                     std::cout << "1. Show Balance\n";
-                    std::cout << "1. Deposit Money\n";
+                    std::cout << "2. Deposit Money\n";
                     std::cout << "3. Withdraw Money\n";
                     std::cout << "4. Exit\n";
                     std::cin >> choice;
@@ -88,7 +88,7 @@ std::cin >> username;
                 case 1:
                     std::cout << "Please enter a choice\n";
                     std::cout << "1. Show Balance\n";
-                    std::cout << "1. Deposit Money\n";
+                    std::cout << "2. Deposit Money\n";
                     std::cout << "3. Withdraw Money\n";
                     std::cout << "4. Exit\n";
                     std::cin >> choice;

@@ -1,4 +1,5 @@
 <h1>Simple Output That looks Like Triangle</h1>
+<h3>With the lenght of the user's input (At the exapmles input is 4)</h3>
 <h2>Lv1</h2>
 
 <pre>
