@@ -51,9 +51,9 @@ int** SetMatrix(int rows, int column){
         pMatrix[i] = new int[column];
     }
     pMatrix[rows][column];
-    for(int i=0; i < rows; i++){
-        for(int j=0; j<column; j++){
-            std::cout << "Enter the element \n" << "Row" << j << " Column " << i << '\n' ;
+    for(int i=0; i<rows; i++){
+        for(int j=0; j < column; j++){
+            std::cout << "Enter the element \n" << "Row" << i+1 << " Column " << j+1 << '\n' ;
             std::cin >> pMatrix[i][j];
         }
     }
